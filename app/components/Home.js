@@ -1,17 +1,12 @@
-import React, { Component } from 'react'
-import Tree from './Tree'
-import { Link } from 'react-router-dom'
-import routes from '../constants/routes'
-import styles from './Home.css'
+import React, { Component } from 'react';
+import Tree from './Tree';
 
 export default class Home extends Component {
   render() {
     return (
-      <div className={styles.container} data-tid="container">
-        <h2>Home</h2>
-        <Link to={routes.COUNTER}>to Counter</Link>
+      <div data-tid="container">
         <Tree />
       </div>
-    )
+    );
   }
 }
