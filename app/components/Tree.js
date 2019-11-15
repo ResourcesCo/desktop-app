@@ -8,9 +8,8 @@ import TreeItem from '@material-ui/lab/TreeItem';
 const useStyles = makeStyles({
   root: {
     height: 216,
-    flexGrow: 1,
-    maxWidth: 400,
-  },
+    flexGrow: 1
+  }
 });
 
 export default () => {
@@ -31,10 +30,12 @@ export default () => {
         <TreeItem nodeId="6" label="Material-UI">
           <TreeItem nodeId="7" label="src">
             <TreeItem nodeId="8" label="index.js" />
-            <TreeItem nodeId="9" label="tree-view.js" />
+            {[...Array(100).keys()].map(n => (
+              <TreeItem nodeId={`9-${n}`} label={`hello-${n}.js`} />
+            ))}
           </TreeItem>
         </TreeItem>
       </TreeItem>
     </TreeView>
   );
-}
+};

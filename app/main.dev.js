@@ -8,7 +8,7 @@
  * When running `yarn build` or `yarn build-main`, this file is compiled to
  * `./app/main.prod.js` using webpack. This gives us some performance wins.
  */
-import { app, BrowserWindow } from 'electron';
+import { app, screen, BrowserWindow } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -61,13 +61,15 @@ app.on('ready', async () => {
     await installExtensions();
   }
 
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728
+    width,
+    height
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
+  mainWindow.maximize();
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event

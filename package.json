@@ -253,6 +253,7 @@
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15",
     "react-redux": "^5.1.1",
+    "react-split-pane": "^0.1.89",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "source-map-support": "^0.5.9",
