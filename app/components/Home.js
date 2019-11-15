@@ -9,9 +9,7 @@ export default () => (
     minSize={200}
     resizerStyle={{ width: 3, cursor: 'col-resize' }}
   >
-    <div>
-      <Sidebar />
-    </div>
+    <Sidebar />
     <div />
   </SplitPane>
 );
